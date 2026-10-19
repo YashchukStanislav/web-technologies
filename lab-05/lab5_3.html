@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна №5 — Завдання 3: Анкета</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="task-three">
+
+<main class="questionnaire-layout">
+  <header class="questionnaire-header">
+    <p class="eyebrow">Лабораторна робота №5 • Завдання 3</p>
+    <h1>Анкета користувача</h1>
+    <p>Приклад анкети з лабораторної №3, оформлений за допомогою CSS: шрифти, текст, фон, поля та кнопки.</p>
+  </header>
+  <form action="" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Особисті дані</legend>
+      <div class="form-grid">
+        <div class="form-field"><label for="q-name">Ім'я та прізвище *</label><input id="q-name" type="text" name="full_name" value="" placeholder="Наприклад, Іван Петренко" required tabindex="1"></div>
+        <div class="form-field"><label for="q-email">Електронна пошта *</label><input id="q-email" type="email" name="email" value="" placeholder="user@example.com" autocomplete="off" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Вкажіть адресу виду user@example.com" required tabindex="2"></div>
+        <div class="form-field"><label for="q-phone">Мобільний телефон *</label><input id="q-phone" type="tel" name="phone" value="" placeholder="+380XXXXXXXXX" pattern="\+380[0-9]{9}" title="Формат +380XXXXXXXXX" required tabindex="3"></div>
+        <div class="form-field"><label for="q-birthday">Дата народження</label><input id="q-birthday" type="date" name="birthday" value="" tabindex="4"></div>
+        <div class="form-field"><label for="q-password">Пароль *</label><input id="q-password" type="password" name="password" value="" placeholder="6 символів: A, a, 1" minlength="6" maxlength="6" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{6}" title="Рівно 6 латинських літер/цифр: велика, мала літера й цифра" required tabindex="5"></div>
+        <div class="form-field"><label for="q-city">Місто з підказками</label><input id="q-city" type="text" name="city" value="" list="q-cities" placeholder="Почніть вводити місто" tabindex="6"><datalist id="q-cities"><option value="Чернівці"><option value="Львів"><option value="Київ"><option value="Одеса"></datalist></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Уподобання</legend>
+      <div class="form-field"><span class="group-label">Як вам зручніше навчатися? (радіокнопки №1)</span><div class="choice-group"><label><input type="radio" name="learning" value="online" tabindex="7"> Онлайн</label><label><input type="radio" name="learning" value="offline"> Офлайн</label><label><input type="radio" name="learning" value="mixed"> Змішано</label></div></div>
+      <div class="form-field"><span class="group-label">Як часто займаєтеся? (радіокнопки №2)</span><div class="choice-group"><label><input type="radio" name="frequency" value="daily"> Щодня</label><label><input type="radio" name="frequency" value="weekly" checked> Щотижня (типово)</label><label><input type="radio" name="frequency" value="rarely"> Рідко</label></div></div>
+      <div class="form-field"><span class="group-label">Улюблені напрями (4 прапорці)</span><div class="choice-group"><label><input type="checkbox" name="interests" value="html"> HTML</label><label><input type="checkbox" name="interests" value="css"> CSS</label><label><input type="checkbox" name="interests" value="js"> JavaScript</label><label><input type="checkbox" name="interests" value="python"> Python</label></div></div>
+    </fieldset>
+    <fieldset>
+      <legend>Випадні списки</legend>
+      <div class="form-grid">
+        <div class="form-field"><label for="q-level">Рівень знань (5 варіантів)</label><select id="q-level" name="level"><option value="none">Початковий нульовий</option><option value="beginner">Початківець</option><option value="basic" selected>Базовий (типово)</option><option value="advanced">Просунутий</option><option value="expert">Експертний</option></select></div>
+        <div class="form-field"><label for="q-tools">Інструменти (6 варіантів, множинний вибір)</label><select id="q-tools" name="tools" multiple size="6"><option value="vscode">VS Code</option><option value="git">Git</option><option value="github">GitHub</option><option value="chrome">Chrome DevTools</option><option value="figma">Figma</option><option value="terminal">Термінал</option></select></div>
+        <div class="form-field"><label for="q-course">Оберіть курс (4 групи × 3 варіанти)</label><select id="q-course" name="course"><optgroup label="Вебтехнології"><option value="html">HTML</option><option value="css">CSS</option><option value="javascript">JavaScript</option></optgroup><optgroup label="Програмування"><option value="python">Python</option><option value="java">Java</option><option value="csharp">C#</option></optgroup><optgroup label="Бази даних"><option value="mysql">MySQL</option><option value="postgres">PostgreSQL</option><option value="sqlite">SQLite</option></optgroup><optgroup label="Інструменти"><option value="git">Git</option><option value="linux">Linux</option><option value="docker">Docker</option></optgroup></select></div>
+        <div class="form-field"><label for="q-comment">Коментар</label><textarea id="q-comment" name="comment" rows="6" placeholder="Напишіть коротко про свої очікування"></textarea></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Завантаження аудіо</legend>
+      <div class="form-field"><label for="q-file">Аудіофайли (можна обрати декілька)</label><input id="q-file" type="file" name="audio_files" value="" accept="audio/*" multiple></div>
+    </fieldset>
+    <div class="form-actions"><button type="submit">Надіслати методом POST</button><button type="reset">Очистити поля</button></div>
+    <p class="form-hint">POST із enctype=multipart/form-data підходить для передавання даних анкети та аудіофайлів. Для обробки запиту потрібен сервер.</p>
+  </form>
+  <form action="" method="get" class="upload-form">
+    <fieldset>
+      <legend>Демонстрація методу GET</legend>
+      <div class="form-field"><label for="q-topic-get">Тема запиту</label><input id="q-topic-get" type="text" name="topic" value="" placeholder="Наприклад: CSS"></div>
+      <div class="form-actions"><button type="submit">Відправити методом GET</button><button type="reset">Очистити</button></div>
+      <p class="form-hint">GET додає параметри до URL сторінки. Паролі й особисті дані через GET не надсилаються. Для POST потрібен сервер.</p>
+    </fieldset>
+  </form>
+</main>
+
+</body>
+</html>

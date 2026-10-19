@@ -1,0 +1,298 @@
+/* Лабораторна робота №5. Один зовнішній CSS для lab4_1.html — lab4_6.html.
+   Назви файлів lab4_* взято дослівно з методички для лабораторної №5.
+   Для ЗАВДАННЯ 2 селектори класів та id НЕ ВИКОРИСТОВУЮТЬСЯ:
+   усі правила таблиці починаються зі структурного селектора body > table. */
+
+/* Загальна база для всіх сторінок */
+body { margin: 0; font-family: Arial, sans-serif; color: #182536; }
+h1, h2 { line-height: 1.22; }
+
+/* ===== ЗАВДАННЯ 1: План подорожі ===== */
+.task-one main { padding: 24px; }
+.task-one .trip-plan {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: white;
+}
+.task-one h1 { font-size: 25px; font-weight: 900; margin: 0 0 10px; }
+.task-one .trip-main-list,
+.task-one .trip-main-list ul { list-style-type: none; list-style-position: inside; }
+/* Маркери — фонові зображення; шлях відносний до style.css, не до HTML. */
+.task-one .trip-main-list {
+    background-color: rgb(103, 158, 128);
+    padding: 0 20px 0 50px;
+    margin: 0;
+}
+.task-one .trip-main-list > li {
+    background-image: url('icons/rule.svg');
+    background-position: 0 8px;
+    background-repeat: no-repeat;
+    background-size: 36px 36px;
+    padding-left: 0;
+    margin: 0 0 10px -44px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.task-one .trip-main-list > li > span { margin-left: 44px; }
+.task-one .trip-main-list span { display: inline-block; padding: 10px 20px; }
+.task-one .trip-main-list > li > span {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+.task-one .trip-main-list > li > ul {
+    background-color: rgb(153, 180, 102);
+    padding-left: 40px;
+    margin: 0 0 10px 44px;
+    font-size: 18px;
+    font-style: italic;
+}
+.task-one .trip-main-list ul > li {
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 34px 34px;
+    margin: 0 0 10px;
+    padding-left: 40px;
+}
+.task-one .trip-main-list ul > li > span { background-color: rgb(218, 106, 32); }
+.task-one .trip-main-list > li:first-child > ul > li:nth-child(1) { background-image: url('icons/ad_units.svg'); }
+.task-one .trip-main-list > li:first-child > ul > li:nth-child(2) { background-image: url('icons/airplane_ticket.svg'); }
+.task-one .trip-main-list > li:first-child > ul > li:nth-child(3) { background-image: url('icons/hotel.svg'); }
+.task-one .trip-main-list > li:first-child > ul > li:nth-child(4) { background-image: url('icons/car_rental.svg'); }
+.task-one .trip-main-list > li:nth-child(2) > ul > li:nth-child(1) { background-image: url('icons/local_bar.svg'); }
+.task-one .trip-main-list > li:nth-child(2) > ul > li:nth-child(2) { background-image: url('icons/casino.svg'); }
+.task-one .trip-main-list > li:nth-child(2) > ul > li:nth-child(3) { background-image: url('icons/museum.svg'); }
+.task-one .trip-main-list > li:nth-child(2) > ul > li:nth-child(4) { background-image: url('icons/festival.svg'); }
+
+/* ===== ЗАВДАННЯ 2: Таблиця. ТІЛЬКИ селектори тегів та псевдокласи. ===== */
+/* Структура body > table унікальна для цієї сторінки — інші завдання мають main. */
+body > table { border-collapse: collapse; border-spacing: 0; margin: 42px auto; width: min(90%, 900px); font-family: Georgia, 'Times New Roman', serif; table-layout: fixed; }
+body > table th, body > table td { text-align: center; padding: 17px 12px; border: 1px solid white; }
+body > table thead th { color: white; font-size: 19px; font-weight: 700; }
+body > table thead th:nth-child(1) { background: #e8c1c3; }
+body > table thead th:nth-child(2) { background: #d99a9d; }
+body > table thead th:nth-child(3) { background: #c8787c; }
+body > table thead th:nth-child(4) { background: #9e444b; }
+body > table thead th:nth-child(5) { background: #65252c; }
+body > table tbody th { color: white; background: #b95259; text-align: left; font-size: 18px; font-weight: 500; }
+body > table tbody tr:nth-child(odd) td { background: #e3babc; }
+body > table tbody tr:nth-child(even) td { background: #f3dddd; }
+body > table tbody td { font-size: 22px; }
+body > table tbody tr:hover td { background: #e9c3c6; }
+
+/* ===== ЗАВДАННЯ 3: Оформлення анкети лабораторної №3 ===== */
+.task-three { background: linear-gradient(130deg, #e7f3ff, #f6f5ff); font-family: 'Segoe UI', Arial, sans-serif; }
+.task-three .questionnaire-layout { max-width: 840px; margin: 36px auto; padding: 30px; background: #fff; box-shadow: 0 12px 40px rgba(22, 58, 117, 0.12); border-radius: 16px; }
+.task-three .questionnaire-header { text-align: center; margin-bottom: 24px; }
+.task-three .eyebrow { color: #397bbb; letter-spacing: 1.4px; font-size: 12px; text-transform: uppercase; font-weight: 700; }
+.task-three h1 { color: #143f6d; font-size: 32px; margin: 5px 0 10px; }
+.task-three .questionnaire-header > p:last-child { color: #586879; line-height: 1.6; }
+.task-three form { margin-top: 18px; }
+.task-three fieldset { border: 1px solid #cad9e9; background: #f7fbff; border-radius: 10px; margin: 0 0 22px; padding: 21px; min-width: 0; }
+.task-three legend { color: #1d598a; font-weight: 700; background: #e4f1fe; border-radius: 6px; padding: 7px 12px; }
+.task-three .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.task-three .form-field { margin-bottom: 17px; }
+.task-three .form-grid .form-field { margin-bottom: 0; }
+.task-three .form-field > label, .task-three .group-label { display: block; font-size: 14px; font-weight: 700; color: #264860; margin-bottom: 7px; }
+.task-three input:not([type="checkbox"]):not([type="radio"]), .task-three select, .task-three textarea { box-sizing: border-box; width: 100%; padding: 11px 12px; background: white; border: 1px solid #b8cce2; border-radius: 7px; color: #213952; font: inherit; }
+.task-three input:focus-visible, .task-three textarea:focus-visible, .task-three select:focus-visible { outline: 2px solid #5295df; outline-offset: 2px; }
+.task-three .choice-group { display: flex; gap: 15px; flex-wrap: wrap; padding: 3px 0 8px; }
+.task-three .choice-group label { color: #405b77; font-size: 14px; cursor: pointer; }
+.task-three input[type="checkbox"], .task-three input[type="radio"] { accent-color: #2876ba; }
+.task-three .form-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.task-three button { background: #2264a3; border: 0; color: white; border-radius: 7px; padding: 12px 18px; font-weight: 700; cursor: pointer; }
+.task-three button[type="reset"] { background: #dbe7f1; color: #294b65; }
+.task-three button:hover { filter: brightness(.92); }
+.task-three .form-hint { font-size: 12px; color: #657688; line-height: 1.6; }
+.task-three .upload-form { margin-top: 25px; }
+
+/* ===== ЗАВДАННЯ 4: CSS-градієнти без зображень ===== */
+.task-four { font-family: 'Segoe UI', Arial, sans-serif; background: #eef5ff; }
+.task-four .gradient-page { max-width: 1130px; margin: 45px auto; padding: 0 20px; }
+.task-four h1 { color: #1a447a; }
+.task-four .gradient-examples { margin-top: 18px; white-space: nowrap; overflow-x: auto; }
+.task-four .gradient-examples > div {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 15px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 3px #153351;
+}
+.task-four .gradient-examples > div:nth-of-type(1) {
+    background-image: linear-gradient(45deg, #235ca1 50%, #7fb4eb 50%);
+    background-size: 40px 40px;
+}
+.task-four .gradient-examples > div:nth-of-type(2) {
+    background-image: linear-gradient(transparent 50%, rgba(7, 74, 150, .4) 50%),
+                      linear-gradient(90deg, rgba(7, 74, 150, .4) 50%, transparent 50%);
+    background-color: #a0cdf2;
+    background-size: 40px 40px;
+}
+.task-four .gradient-examples > div:nth-of-type(3) {
+    background-image: radial-gradient(circle farthest-corner at 30px 20px, #c6eaff 0%, #5aa7e3 45%, #173d8a 100%);
+}
+.task-four .gradient-examples > div:nth-of-type(4) {
+    background-color: #317dc2;
+    background-image: linear-gradient(to top, rgba(8, 40, 94, .83), transparent);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+
+/* ===== ЗАВДАННЯ 5: Box-sizing, overflow, display ===== */
+.task-five { background: #f3f6fd; font-family: 'Segoe UI', Arial, sans-serif; }
+.task-five .box-model-page { max-width: 1180px; margin: 32px auto; padding: 0 24px 50px; }
+.task-five h1 { color: #243f76; }
+.task-five section { margin-top: 35px; padding: 20px; background: #fff; border-radius: 10px; }
+.task-five h2 { margin-top: 0; color: #325593; }
+.task-five .size-examples > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #275e94;
+    margin: 20px;
+    background-color: #d7eaff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.task-five .size-examples > div:nth-child(1) { box-sizing: content-box; }
+/* Загальна ширина content-box: 300 + 2*20 + 2*5 = 350px (margin не враховується). */
+.task-five .size-examples > div:nth-child(2) { box-sizing: border-box; background-color: #c7f2e4; border-color: #208164; }
+/* Загальна ширина border-box: рівно 300px, бо padding та border включено всередину width. */
+.task-five .size-examples small { display: block; margin-top: 12px; font-size: 13px; font-weight: 400; }
+.task-five .overflow-examples { font-size: 0; }
+.task-five .overflow-examples > div {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 240px;
+    max-height: 80px;
+    padding: 6px;
+    margin: 12px 16px 155px 0;
+    border: 2px solid #285b9d;
+    background: #edf5ff;
+    font-size: 14px;
+    line-height: 1.45;
+}
+.task-five .overflow-examples > div:nth-child(1) { overflow: visible; }
+.task-five .overflow-examples > div:nth-child(2) { overflow: hidden; }
+.task-five .overflow-examples > div:nth-child(3) { overflow: scroll; }
+.task-five .overflow-examples > div:nth-child(4) { overflow: auto; }
+.task-five nav ul { list-style-type: none; padding: 0; margin: 0; background: #1f4f85; }
+.task-five nav li { display: inline-block; }
+.task-five nav a { display: block; padding: 10px 20px; color: #fff; text-decoration: none; }
+.task-five nav a:hover { background: #347bc1; }
+/* display:none прибирає елемент З потоку документа, місце під нього НЕ залишається.
+   visibility:hidden або opacity:0 приховують вміст візуально, але займають місце. */
+.task-five nav li:nth-child(3) { display: none; }
+
+/* ===== ЗАВДАННЯ 6: Сайт-візитівка з фонами ===== */
+.task-six {
+    background-color: #1b2a41;                 /* запасний колір */
+    background-image: url('img/page-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.task-six .site-container {
+    box-sizing: border-box;
+    max-width: 900px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .86);
+}
+/* Коли вікно вужче 320px, main НЕ звужується нижче min-width:320px.
+   Через це сторінка може отримати горизонтальну прокрутку. */
+.task-six h1 { margin: 6px 0; color: #113f65; font-size: 46px; }
+.task-six h2 { color: #174f77; }
+.task-six .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; color: #3b7795; }
+.task-six .site-header { padding: 40px 26px; text-align: center; background: rgba(195, 224, 242, .78); border-radius: 10px; }
+.task-six .website-section { margin: 24px 0; padding: 14px 20px 25px; background: rgba(255,255,255,.8); border-radius: 9px; }
+.task-six .website-section p { line-height: 1.6; }
+.task-six .inline-tags > div {
+    display: inline;
+    width: 200px;
+    height: 100px;
+    background: #8dc7e5;
+    color: #16486c;
+    padding: 6px;
+    margin-right: 3px;
+}
+/* display:inline: width і height НЕ впливають, бо елемент — рядковий,
+   а його розмір визначається текстом та рядковою моделлю. */
+.task-six .block-tags > span { display: block; box-sizing: border-box; width: 150px; padding: 10px; margin: 6px 0; background: #2f6e9a; color: white; }
+.task-six .repeat-examples > div {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    width: min(48%, 355px);
+    height: 200px;
+    margin: 8px 1%;
+    border: 2px solid #376f94;
+    background-color: #d5ebfb;
+    background-image: url('img/pattern.png');
+    background-size: 60px 60px;
+}
+.task-six .repeat-examples > div > span,
+.task-six .size-background-examples > div > span { background: rgba(17, 59, 93, .9); color: white; display: inline-block; padding: 7px 12px; font-weight: 700; }
+.task-six .repeat-examples > div:nth-child(1) { background-repeat: repeat-x; }
+.task-six .repeat-examples > div:nth-child(2) { background-repeat: repeat-y; }
+.task-six .repeat-examples > div:nth-child(3) { background-repeat: space; }
+.task-six .repeat-examples > div:nth-child(4) { background-repeat: round; }
+/* space: зберігає розмір картинки й розподіляє проміжки між повторами.
+   round: підганяє/масштабує картинку так, щоб умістилася ціла кількість повторів. */
+.task-six .size-background-examples > div {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid #214d71;
+    background-color: #d0e7f6;
+    background-image: url('img/sample-landscape.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.task-six .size-background-examples > div:nth-child(1) { background-size: contain; }
+.task-six .size-background-examples > div:nth-child(2) { background-size: cover; }
+.task-six .attachment-examples > div {
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    width: min(48%, 355px);
+    max-height: 150px;
+    overflow: auto;
+    border: 2px solid #2f719b;
+    padding: 12px;
+    margin: 9px 1%;
+    background-image: url('img/sample-landscape.jpg');
+    background-position: center;
+    background-size: 280px auto;
+    background-repeat: repeat;
+    color: #052c4c;
+}
+.task-six .attachment-examples strong, .task-six .attachment-examples p { background: rgba(255,255,255,.88); padding: 4px; }
+.task-six .attachment-examples > div:nth-child(1) { background-attachment: scroll; }
+.task-six .attachment-examples > div:nth-child(2) { background-attachment: local; }
+/* scroll: фон закріплений відносно рамки блоку й не прокручується разом із текстом усередині.
+   local: фон прокручується разом із вмістом блоку. */
+.task-six footer { text-align: center; margin: 25px 0 5px; color: #41627d; font-size: 13px; }
+
+@media (max-width: 640px) {
+    .task-three .questionnaire-layout { margin: 10px; padding: 16px; }
+    .task-three .form-grid { grid-template-columns: 1fr; }
+    .task-six .repeat-examples > div, .task-six .attachment-examples > div { width: 100%; margin: 8px 0; }
+    .task-six .website-section { padding: 12px; }
+}
