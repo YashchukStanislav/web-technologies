@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 6 — Завдання 6: попап</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="topbar-link" href="#">Mail</a>
+        <a class="topbar-link" href="#">Images</a>
+
+        <div class="apps">
+            <!-- Прихований чекбокс = "перемикач" стану попапу (без JavaScript) -->
+            <input class="popup-toggle" type="checkbox" id="popup-toggle" aria-label="Відкрити або закрити меню застосунків">
+            <label class="popup-button" for="popup-toggle">
+                <img class="popup-button-icon" src="images/popup-button.png" alt="Apps" width="24" height="24">
+            </label>
+
+            <div class="popup">
+                <!-- tabindex="0": щоб прокручений вміст можна було гортати стрілками з клавіатури -->
+                <div class="popup-scroll" tabindex="0">
+                    <ul class="app-grid">
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/calendar.png" alt=""><span class="app-name">Calendar</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/mail.png" alt=""><span class="app-name">Mail</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/news.png" alt=""><span class="app-name">News</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/maps.png" alt=""><span class="app-name">Map</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/files.png" alt=""><span class="app-name">Files</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/contacts.png" alt=""><span class="app-name">Contacts</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/tanslation.png" alt=""><span class="app-name">Translate</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/videos.png" alt=""><span class="app-name">Videos</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/search.png" alt=""><span class="app-name">Search</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/photos.png" alt=""><span class="app-name">Photos</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/apps.png" alt=""><span class="app-name">Apps</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/documents.png" alt=""><span class="app-name">Documents</span></a></li>
+                    </ul>
+
+                    <!-- Другий чекбокс = кнопка "More" -->
+                    <input class="more-toggle" type="checkbox" id="more-toggle" aria-label="Показати більше застосунків">
+
+                    <ul class="app-grid app-grid--extra">
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/chat.png" alt=""><span class="app-name">Chat</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/classroom.png" alt=""><span class="app-name">Classroom</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/collection.png" alt=""><span class="app-name">Collection</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/mars.png" alt=""><span class="app-name">Mars</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/blogs.png" alt=""><span class="app-name">Blogs</span></a></li>
+                        <li class="app-item"><a class="app" href="#"><img class="app-icon" src="images/promo.png" alt=""><span class="app-name">Promos</span></a></li>
+                    </ul>
+
+                    <div class="popup-footer">
+                        <label class="more-btn" for="more-toggle">More</label>
+                        <a class="more-link" href="#">Even more from Kottans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="bell" href="#"><img class="bell-icon" src="images/bell.png" alt="Notifications" width="24" height="24"></a>
+        <a class="avatar" href="#" aria-label="Профіль">K</a>
+    </header>
+</body>
+</html>

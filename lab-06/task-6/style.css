@@ -1,0 +1,281 @@
+/* ================= Базові стилі ================= */
+body {
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+
+/* ================= Верхня панель ================= */
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 40px;
+}
+
+.topbar-link {
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #5f6368;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.topbar-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.topbar-link:focus {
+    outline: none;
+    border-color: #a8c7fa;
+    box-shadow: 0 0 0 2px #d3e3fd;
+}
+
+/* ================= Кнопка, що відкриває попап ================= */
+.apps {
+    position: relative;               /* точка відліку для абсолютно позиціонованого попапу */
+}
+
+/* Чекбокс ховаємо НЕ через display:none, а так, щоб він лишався фокусованим з клавіатури */
+.popup-toggle,
+.more-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    opacity: 0;
+}
+
+.popup-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background-color: #f1f3f4;
+}
+
+/* фокус із клавіатури лягає на прихований чекбокс -> підсвічуємо label поряд */
+.popup-toggle:focus + .popup-button {
+    border-color: #a8c7fa;
+    background-color: #e8f0fe;
+}
+
+/* ================= Попап ================= */
+.popup {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: -84px;
+    width: 384px;
+    background-color: #ffffff;
+    border: 1px solid #d5d5d5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+
+    /* стан 1: початковий — попап не видно.
+       visibility:hidden (а не лише opacity:0) прибирає вміст із порядку табуляції */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+}
+
+/* стан 2: чекбокс відмічено -> попап видно; повторне натискання знову ховає */
+.popup-toggle:checked ~ .popup {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+/* "трикутник" над попапом — псевдоелемент :before */
+.popup:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 90px;
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+    border-top: 1px solid #d5d5d5;
+    border-left: 1px solid #d5d5d5;
+    transform: rotate(45deg);
+}
+
+/* Скрол-контейнер. Поки іконок 12 — вміст вміщається (скролу нема),
+   після "More" вміст більший за max-height -> з'являється прокрутка */
+.popup-scroll {
+    position: relative;               /* щоб був шар над "трикутником" */
+    max-height: 528px;
+    overflow-y: auto;
+    background-color: #ffffff;
+}
+
+.popup-scroll:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #a8c7fa;
+}
+
+/* ================= Сітка іконок ================= */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 108px);
+    gap: 4px 8px;
+    justify-content: center;
+    margin: 0;
+    padding: 24px 0 12px;
+    list-style: none;
+}
+
+.app-item {
+    margin: 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 112px;
+    box-sizing: border-box;
+    padding: 12px 4px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #5f6368;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.app-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 14px;
+    object-fit: contain;              /* іконки мають різні пропорції */
+}
+
+/* Усі інтерактивні елементи позначаються при наведенні... */
+.app:hover {
+    border-color: #dadce0;
+    background-color: #fafafa;
+}
+
+/* ...і мають стан :focus */
+.app:focus {
+    outline: none;
+    border-color: #a8c7fa;
+    box-shadow: 0 0 0 1px #a8c7fa;
+}
+
+/* ================= Стан 3: розширений набір ("More") ================= */
+.app-grid--extra {
+    display: none;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+}
+
+.more-toggle:checked ~ .app-grid--extra {
+    display: grid;
+}
+
+/* після розкриття сам чекбокс стає зайвим -> виходить із порядку табуляції */
+.more-toggle:checked {
+    visibility: hidden;
+}
+
+/* ================= Нижня смуга ("More" / "Even more...") ================= */
+.popup-footer {
+    position: sticky;                 /* "прилипає" до низу прокручуваного контейнера */
+    bottom: 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ebebeb;
+}
+
+.more-btn,
+.more-link {
+    display: block;
+    padding: 12px 0;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    color: #5f6368;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.more-btn:hover,
+.more-link:hover {
+    background-color: #e8e8e8;
+    color: #202124;
+}
+
+.more-toggle:focus ~ .popup-footer .more-btn,
+.more-link:focus {
+    outline: none;
+    border-color: #a8c7fa;
+    background-color: #e8f0fe;
+}
+
+/* до розкриття видно "More", після — посилання "Even more from Kottans" */
+.more-link {
+    display: none;
+}
+
+.more-toggle:checked ~ .popup-footer .more-btn {
+    display: none;
+}
+
+.more-toggle:checked ~ .popup-footer .more-link {
+    display: block;
+}
+
+/* ================= Дзвіночок та аватар ================= */
+.bell {
+    display: flex;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.bell-icon {
+    display: block;
+}
+
+.bell:hover {
+    background-color: #f1f3f4;
+}
+
+.bell:focus {
+    outline: none;
+    border-color: #a8c7fa;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: #5f6368;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.avatar:hover {
+    background-color: #3c4043;
+}
+
+.avatar:focus {
+    outline: none;
+    border-color: #a8c7fa;
+    box-shadow: 0 0 0 2px #d3e3fd;
+}

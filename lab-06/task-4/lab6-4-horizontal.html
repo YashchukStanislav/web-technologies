@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 6 — Завдання 4: горизонтальна навігація</title>
+    <!-- Google Fonts Icons (потрібен інтернет) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page page--with-top-nav">
+
+    <!-- fixed-панель зверху; перший рівень — лише піктограми -->
+    <nav class="nav-h">
+        <ul class="nav-h__list">
+            <li class="nav-h__item nav-h__item--active nav-h__item--has-sub">
+                <a class="nav-h__link" href="#top" aria-label="Головна"><span class="material-icons">home</span></a>
+                <ul class="nav-h__sub">
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Про нас</a></li>
+                    <li class="nav-h__item nav-h__item--has-sub">
+                        <a class="nav-h__link" href="#">Новини</a>
+                        <ul class="nav-h__sub">
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">Університет</a></li>
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">Факультет</a></li>
+                            <li class="nav-h__item nav-h__item--has-sub">
+                                <a class="nav-h__link" href="#">Події</a>
+                                <ul class="nav-h__sub">
+                                    <li class="nav-h__item"><a class="nav-h__link" href="#">Конференції</a></li>
+                                    <li class="nav-h__item"><a class="nav-h__link" href="#">Хакатони</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Контакти</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-h__item nav-h__item--has-sub">
+                <a class="nav-h__link" href="#" aria-label="Пошук"><span class="material-icons">search</span></a>
+                <ul class="nav-h__sub">
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Пошук по сайту</a></li>
+                    <li class="nav-h__item nav-h__item--has-sub">
+                        <a class="nav-h__link" href="#">Розширений пошук</a>
+                        <ul class="nav-h__sub">
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">За датою</a></li>
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">За категорією</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-h__item nav-h__item--has-sub">
+                <a class="nav-h__link" href="#" aria-label="Пошта"><span class="material-icons">email</span></a>
+                <ul class="nav-h__sub">
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Вхідні</a></li>
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Надіслані</a></li>
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Чернетки</a></li>
+                </ul>
+            </li>
+
+            <!-- останній пункт притиснутий праворуч через float: right -->
+            <li class="nav-h__item nav-h__item--right nav-h__item--has-sub">
+                <a class="nav-h__link" href="#" aria-label="Профіль"><span class="material-icons">person</span></a>
+                <ul class="nav-h__sub">
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Мій профіль</a></li>
+                    <li class="nav-h__item nav-h__item--has-sub">
+                        <a class="nav-h__link" href="#">Налаштування</a>
+                        <ul class="nav-h__sub">
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">Тема</a></li>
+                            <li class="nav-h__item"><a class="nav-h__link" href="#">Мова</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-h__item"><a class="nav-h__link" href="#">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content" id="top">
+        <h1>Горизонтальна навігація</h1>
+        <p>Верхня панель має <code>position: fixed</code>, тому не зникає при прокручуванні. Наведіть курсор на піктограми, щоб побачити випадні меню (до трьох рівнів вкладеності).</p>
+
+        <!-- sticky-панель: спочатку у потоці, після прокрутки "прилипає" під fixed-панеллю -->
+        <ul class="sticky-menu">
+            <li class="sticky-menu__item"><a class="sticky-menu__link sticky-menu__link--active" href="#s1">Розділ 1</a></li>
+            <li class="sticky-menu__item"><a class="sticky-menu__link" href="#s2">Розділ 2</a></li>
+            <li class="sticky-menu__item"><a class="sticky-menu__link" href="#s3">Розділ 3</a></li>
+        </ul>
+
+        <h2 id="s1">Розділ 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor. In quis arcu et eros porta lobortis sit amet at magna.</p>
+        <p>Phasellus sed lectus vitae augue ornare vestibulum. Quisque et nibh vel nunc pellentesque tempor. Nam condimentum libero eu sem blandit, at tempus risus pulvinar. Vivamus nec purus a ante ultricies gravida.</p>
+        <p>Aenean facilisis nulla sit amet nunc lacinia, at laoreet magna posuere. Sed at orci sed nulla pharetra pellentesque. Fusce vel nibh nec arcu iaculis sodales. Mauris luctus magna ac risus pulvinar, nec faucibus tortor efficitur.</p>
+        <h2 id="s2">Розділ 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor. In quis arcu et eros porta lobortis sit amet at magna.</p>
+        <p>Phasellus sed lectus vitae augue ornare vestibulum. Quisque et nibh vel nunc pellentesque tempor. Nam condimentum libero eu sem blandit, at tempus risus pulvinar. Vivamus nec purus a ante ultricies gravida.</p>
+        <p>Aenean facilisis nulla sit amet nunc lacinia, at laoreet magna posuere. Sed at orci sed nulla pharetra pellentesque. Fusce vel nibh nec arcu iaculis sodales. Mauris luctus magna ac risus pulvinar, nec faucibus tortor efficitur.</p>
+        <h2 id="s3">Розділ 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor. In quis arcu et eros porta lobortis sit amet at magna.</p>
+        <p>Phasellus sed lectus vitae augue ornare vestibulum. Quisque et nibh vel nunc pellentesque tempor. Nam condimentum libero eu sem blandit, at tempus risus pulvinar. Vivamus nec purus a ante ultricies gravida.</p>
+        <p>Aenean facilisis nulla sit amet nunc lacinia, at laoreet magna posuere. Sed at orci sed nulla pharetra pellentesque. Fusce vel nibh nec arcu iaculis sodales. Mauris luctus magna ac risus pulvinar, nec faucibus tortor efficitur.</p>
+        <p>Phasellus sed lectus vitae augue ornare vestibulum. Quisque et nibh vel nunc pellentesque tempor. Nam condimentum libero eu sem blandit, at tempus risus pulvinar. Vivamus nec purus a ante ultricies gravida.</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,247 @@
+/* ================= Загальне ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #222;
+}
+
+.content {
+    max-width: 800px;
+    padding: 20px 30px;
+    line-height: 1.6;
+}
+
+.page--with-top-nav {
+    padding-top: 56px;                /* місце під fixed-панель, щоб вона не перекривала вміст */
+}
+
+.page--with-side-nav .content {
+    margin-left: 220px;               /* місце під fixed-панель зліва */
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+/* ================= ГОРИЗОНТАЛЬНА ПАНЕЛЬ ================= */
+.nav-h {
+    position: fixed;                  /* зафіксована зверху вікна */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #555;
+}
+
+.nav-h__list,
+.nav-h__sub {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* clearfix для батька з float-елементами */
+.nav-h__list:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.nav-h__item {
+    position: relative;               /* відносно нього позиціонується випадне підменю */
+}
+
+/* пункти першого рівня — в один ряд */
+.nav-h__list > .nav-h__item {
+    float: left;
+}
+
+/* останній пункт — праворуч сторінки */
+.nav-h__list > .nav-h__item--right {
+    float: right;
+}
+
+.nav-h__link {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* перший рівень: лише піктограма */
+.nav-h__list > .nav-h__item > .nav-h__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 56px;
+    padding: 0;
+}
+
+.nav-h__link:hover {
+    background-color: #777;
+}
+
+/* активний (поточний) пункт — після :hover, щоб колір не зникав при наведенні */
+.nav-h__item--active > .nav-h__link,
+.nav-h__item--active > .nav-h__link:hover {
+    background-color: #4caf50;
+}
+
+/* ---- випадне меню ---- */
+.nav-h__sub {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #444;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    visibility: hidden;               /* приховано, але не займає/не втрачає місце в потоці */
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.nav-h__item:hover > .nav-h__sub,
+.nav-h__item:focus-within > .nav-h__sub {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* другий та третій рівні розкриваються вбік */
+.nav-h__sub .nav-h__sub {
+    top: 0;
+    left: 100%;
+}
+
+/* підменю крайнього правого пункту розкриваємо ліворуч, щоб воно не виходило за екран */
+.nav-h__item--right > .nav-h__sub {
+    left: auto;
+    right: 0;
+}
+
+.nav-h__item--right .nav-h__sub .nav-h__sub {
+    left: auto;
+    right: 100%;
+}
+
+/* стрілочка біля пунктів, які мають вкладене меню (псевдоелемент) */
+.nav-h__sub > .nav-h__item--has-sub > .nav-h__link:after {
+    content: '\25B8';
+    float: right;
+    margin-left: 12px;
+}
+
+/* ---- sticky-панель ---- */
+.sticky-menu {
+    position: sticky;                 /* спочатку в потоці, а після прокрутки прилипає */
+    top: 56px;                        /* під fixed-панеллю */
+    z-index: 900;
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    background-color: #f1f1f1;
+    border-bottom: 3px solid #4caf50;
+}
+
+.sticky-menu:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.sticky-menu__item {
+    float: left;
+}
+
+.sticky-menu__link {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.sticky-menu__link:hover {
+    background-color: #ddd;
+}
+
+.sticky-menu__link--active,
+.sticky-menu__link--active:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* ================= ВЕРТИКАЛЬНА ПАНЕЛЬ ================= */
+.nav-v {
+    position: fixed;
+    top: 0;                           /* top + bottom = повна висота вікна */
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    background-color: #0066b3;
+    z-index: 1000;
+}
+
+.nav-v__list,
+.nav-v__sub {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-v__item {
+    position: relative;
+}
+
+.nav-v__link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.nav-v__text {
+    white-space: nowrap;
+}
+
+.nav-v__link:hover {
+    background-color: #004f8a;
+}
+
+.nav-v__item--active > .nav-v__link,
+.nav-v__item--active > .nav-v__link:hover {
+    background-color: #1e88e5;
+}
+
+/* випадні підменю — праворуч від пункту */
+.nav-v__sub {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 220px;
+    background-color: #0066b3;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.nav-v__item:hover > .nav-v__sub,
+.nav-v__item:focus-within > .nav-v__sub {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-v__item--has-sub > .nav-v__link:after {
+    content: '\203A';
+    margin-left: auto;
+    font-size: 20px;
+}

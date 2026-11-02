@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #ffffff;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* ================= Сцена ================= */
+.weather {
+    position: relative;               /* всі шари позиціонуються відносно цього блоку */
+    width: 520px;
+    height: 410px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4d4d4, #b9b9b9);
+}
+
+/* ================= Чорна картка ================= */
+.today {
+    position: absolute;
+    top: 12px;
+    left: 70px;
+    width: 280px;
+    height: 330px;
+    background-color: #000;
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.today__temp {
+    position: absolute;
+    left: 14px;
+    bottom: 36px;
+    color: #8c8c8c;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ================= Хмара ================= */
+.cloud {
+    position: absolute;
+    top: 70px;
+    left: 160px;
+    width: 300px;
+    height: 120px;
+    z-index: 2;                       /* вище за чорну картку, але нижче за прогноз */
+    border-radius: 60px;
+    background: radial-gradient(ellipse at 50% 60%, #ffffff 30%, rgba(255, 255, 255, 0.85) 60%, rgba(255, 255, 255, 0) 100%);
+    filter: blur(5px);
+    opacity: 0.95;
+}
+
+/* "горби" хмари */
+.cloud:before,
+.cloud:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.cloud:before {
+    top: -42px;
+    left: 70px;
+    width: 130px;
+    height: 100px;
+    opacity: 0.95;
+}
+
+.cloud:after {
+    top: -22px;
+    left: 160px;
+    width: 110px;
+    height: 80px;
+    opacity: 0.9;
+}
+
+/* ================= Стрілки ================= */
+.arrows {
+    position: absolute;
+    top: 108px;
+    left: 24px;
+    z-index: 4;
+    display: flex;
+    background-color: rgba(120, 120, 120, 0.55);   /* напівпрозорий фон -> видно чорну картку під ним */
+}
+
+.arrows__btn {
+    width: 56px;
+    height: 54px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #222;
+    font-size: 46px;
+    font-weight: 100;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.arrows__btn--next {
+    background-color: rgba(60, 60, 60, 0.35);
+}
+
+.arrows__btn:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.arrows__btn:focus {
+    outline: 2px solid #fff;
+}
+
+/* ================= Прогноз ================= */
+.forecast {
+    position: absolute;
+    top: 258px;
+    left: 218px;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    height: 110px;
+    margin: 0;
+    padding: 16px 14px;
+    list-style: none;
+    background-color: rgba(210, 210, 210, 0.92);
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.45);   /* тінь справа-знизу */
+}
+
+.forecast__day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast__name {
+    color: #333;
+    font-size: 12px;
+    opacity: 0.3;                    /* назви днів — майже прозорі */
+}
+
+.forecast__temp {
+    margin-top: 6px;
+    color: #111;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.forecast__day:hover .forecast__name {
+    opacity: 1;
+}

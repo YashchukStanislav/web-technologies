@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.wrapper {
+    width: 480px;
+    margin: 40px auto;
+}
+
+.block {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 2px solid #222;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+/* Блоки 1.x — зелені, завжди видимі */
+.block-1-1,
+.block-1-2 {
+    height: 36px;
+    line-height: 32px;
+    background-color: #00b050;
+    color: #111;
+}
+
+/* Блоки 2.x — сині, спочатку приховані.
+   visibility: hidden / opacity: 0 (а не display: none) зберігають місце в потоці,
+   тому розмітка не "стрибає" при появі блоку */
+.block-2-1,
+.block-2-2 {
+    background-color: #558ed5;
+    line-height: 1.5;
+    padding-top: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.block-2-1 {
+    height: 70px;
+}
+
+.block-2-2 {
+    height: 90px;
+}
+
+/* Наведення на 1.1 -> з'являється 2.1; наведення на 1.2 -> з'являється 2.2 */
+.block-1-1:hover + .block-2-1,
+.block-1-2:hover + .block-2-2 {
+    opacity: 1;
+    visibility: visible;
+}

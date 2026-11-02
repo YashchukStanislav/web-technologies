@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 6 — Завдання 4: вертикальна навігація</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page page--with-side-nav">
+
+    <!-- fixed-панель на всю висоту вікна; перший рівень — піктограма + назва -->
+    <nav class="nav-v">
+        <ul class="nav-v__list">
+            <li class="nav-v__item nav-v__item--active">
+                <a class="nav-v__link" href="#">
+                    <span class="material-icons">home</span><span class="nav-v__text">Home</span>
+                </a>
+            </li>
+
+            <li class="nav-v__item nav-v__item--has-sub">
+                <a class="nav-v__link" href="#">
+                    <span class="material-icons">assignment</span><span class="nav-v__text">About</span>
+                </a>
+                <ul class="nav-v__sub">
+                    <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Історія</span></a></li>
+                    <li class="nav-v__item nav-v__item--has-sub">
+                        <a class="nav-v__link" href="#"><span class="nav-v__text">Команда</span></a>
+                        <ul class="nav-v__sub">
+                            <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Розробники</span></a></li>
+                            <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Дизайнери</span></a></li>
+                            <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Менеджери</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Партнери</span></a></li>
+                </ul>
+            </li>
+
+            <li class="nav-v__item nav-v__item--has-sub">
+                <a class="nav-v__link" href="#">
+                    <span class="material-icons">local_cafe</span><span class="nav-v__text">Work With Me</span>
+                </a>
+                <ul class="nav-v__sub">
+                    <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Послуги</span></a></li>
+                    <li class="nav-v__item nav-v__item--has-sub">
+                        <a class="nav-v__link" href="#"><span class="nav-v__text">Портфоліо</span></a>
+                        <ul class="nav-v__sub">
+                            <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Веб-сайти</span></a></li>
+                            <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Застосунки</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-v__item"><a class="nav-v__link" href="#"><span class="nav-v__text">Ціни</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Вертикальна навігація</h1>
+        <p>Бічна панель має <code>position: fixed</code> та займає всю висоту вікна (<code>top: 0; bottom: 0</code>). Наведіть курсор на «About» або «Work With Me» — підменю випадають праворуч, до трьох рівнів вкладеності.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis. Proin viverra risus a eros volutpat tempor.</p>
+    </main>
+</body>
+</html>
