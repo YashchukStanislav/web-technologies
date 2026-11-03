@@ -17,7 +17,7 @@ body {
     color: white;
 }
 
-/* Блоки 1.x — зелені, завжди видимі */
+
 .block-1-1,
 .block-1-2 {
     height: 36px;
@@ -26,9 +26,7 @@ body {
     color: #111;
 }
 
-/* Блоки 2.x — сині, спочатку приховані.
-   visibility: hidden / opacity: 0 (а не display: none) зберігають місце в потоці,
-   тому розмітка не "стрибає" при появі блоку */
+
 .block-2-1,
 .block-2-2 {
     background-color: #558ed5;
@@ -47,7 +45,7 @@ body {
     height: 90px;
 }
 
-/* Наведення на 1.1 -> з'являється 2.1; наведення на 1.2 -> з'являється 2.2 */
+
 .block-1-1:hover + .block-2-1,
 .block-1-2:hover + .block-2-2 {
     opacity: 1;

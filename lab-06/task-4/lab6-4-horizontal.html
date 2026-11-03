@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лабораторна 6 — Завдання 4: горизонтальна навігація</title>
-    <!-- Google Fonts Icons (потрібен інтернет) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page page--with-top-nav">
 
-    <!-- fixed-панель зверху; перший рівень — лише піктограми -->
     <nav class="nav-h">
         <ul class="nav-h__list">
             <li class="nav-h__item nav-h__item--active nav-h__item--has-sub">
@@ -58,7 +56,6 @@
                 </ul>
             </li>
 
-            <!-- останній пункт притиснутий праворуч через float: right -->
             <li class="nav-h__item nav-h__item--right nav-h__item--has-sub">
                 <a class="nav-h__link" href="#" aria-label="Профіль"><span class="material-icons">person</span></a>
                 <ul class="nav-h__sub">
@@ -80,7 +77,6 @@
         <h1>Горизонтальна навігація</h1>
         <p>Верхня панель має <code>position: fixed</code>, тому не зникає при прокручуванні. Наведіть курсор на піктограми, щоб побачити випадні меню (до трьох рівнів вкладеності).</p>
 
-        <!-- sticky-панель: спочатку у потоці, після прокрутки "прилипає" під fixed-панеллю -->
         <ul class="sticky-menu">
             <li class="sticky-menu__item"><a class="sticky-menu__link sticky-menu__link--active" href="#s1">Розділ 1</a></li>
             <li class="sticky-menu__item"><a class="sticky-menu__link" href="#s2">Розділ 2</a></li>

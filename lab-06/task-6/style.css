@@ -1,11 +1,9 @@
-/* ================= Базові стилі ================= */
 body {
     margin: 0;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: #ffffff;
 }
 
-/* ================= Верхня панель ================= */
 .topbar {
     display: flex;
     justify-content: flex-end;
@@ -34,12 +32,10 @@ body {
     box-shadow: 0 0 0 2px #d3e3fd;
 }
 
-/* ================= Кнопка, що відкриває попап ================= */
 .apps {
-    position: relative;               /* точка відліку для абсолютно позиціонованого попапу */
+    position: relative;
 }
 
-/* Чекбокс ховаємо НЕ через display:none, а так, щоб він лишався фокусованим з клавіатури */
 .popup-toggle,
 .more-toggle {
     position: absolute;
@@ -64,13 +60,11 @@ body {
     background-color: #f1f3f4;
 }
 
-/* фокус із клавіатури лягає на прихований чекбокс -> підсвічуємо label поряд */
 .popup-toggle:focus + .popup-button {
     border-color: #a8c7fa;
     background-color: #e8f0fe;
 }
 
-/* ================= Попап ================= */
 .popup {
     position: absolute;
     top: calc(100% + 12px);
@@ -80,22 +74,17 @@ body {
     border: 1px solid #d5d5d5;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     z-index: 10;
-
-    /* стан 1: початковий — попап не видно.
-       visibility:hidden (а не лише opacity:0) прибирає вміст із порядку табуляції */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.2s, visibility 0s linear 0.2s;
 }
 
-/* стан 2: чекбокс відмічено -> попап видно; повторне натискання знову ховає */
 .popup-toggle:checked ~ .popup {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.2s;
 }
 
-/* "трикутник" над попапом — псевдоелемент :before */
 .popup:before {
     content: '';
     position: absolute;
@@ -109,10 +98,8 @@ body {
     transform: rotate(45deg);
 }
 
-/* Скрол-контейнер. Поки іконок 12 — вміст вміщається (скролу нема),
-   після "More" вміст більший за max-height -> з'являється прокрутка */
 .popup-scroll {
-    position: relative;               /* щоб був шар над "трикутником" */
+    position: relative;
     max-height: 528px;
     overflow-y: auto;
     background-color: #ffffff;
@@ -123,7 +110,6 @@ body {
     box-shadow: inset 0 0 0 2px #a8c7fa;
 }
 
-/* ================= Сітка іконок ================= */
 .app-grid {
     display: grid;
     grid-template-columns: repeat(3, 108px);
@@ -156,23 +142,20 @@ body {
     width: 56px;
     height: 56px;
     margin-bottom: 14px;
-    object-fit: contain;              /* іконки мають різні пропорції */
+    object-fit: contain;
 }
 
-/* Усі інтерактивні елементи позначаються при наведенні... */
 .app:hover {
     border-color: #dadce0;
     background-color: #fafafa;
 }
 
-/* ...і мають стан :focus */
 .app:focus {
     outline: none;
     border-color: #a8c7fa;
     box-shadow: 0 0 0 1px #a8c7fa;
 }
 
-/* ================= Стан 3: розширений набір ("More") ================= */
 .app-grid--extra {
     display: none;
     border-top: 1px solid #e0e0e0;
@@ -183,14 +166,12 @@ body {
     display: grid;
 }
 
-/* після розкриття сам чекбокс стає зайвим -> виходить із порядку табуляції */
 .more-toggle:checked {
     visibility: hidden;
 }
 
-/* ================= Нижня смуга ("More" / "Even more...") ================= */
 .popup-footer {
-    position: sticky;                 /* "прилипає" до низу прокручуваного контейнера */
+    position: sticky;
     bottom: 0;
     background-color: #f5f5f5;
     border-top: 1px solid #ebebeb;
@@ -222,7 +203,6 @@ body {
     background-color: #e8f0fe;
 }
 
-/* до розкриття видно "More", після — посилання "Even more from Kottans" */
 .more-link {
     display: none;
 }
@@ -235,7 +215,6 @@ body {
     display: block;
 }
 
-/* ================= Дзвіночок та аватар ================= */
 .bell {
     display: flex;
     padding: 6px;

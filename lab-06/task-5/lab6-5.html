@@ -8,21 +8,17 @@
 </head>
 <body>
     <div class="weather">
-        <!-- чорна картка з температурою -->
         <div class="today">
             <span class="today__temp">17</span>
         </div>
 
-        <!-- хмара: складається з фонового блоку та двох псевдоелементів (:before / :after) -->
         <div class="cloud"></div>
 
-        <!-- кнопки "назад / вперед" напівпрозорі -->
         <div class="arrows">
             <button class="arrows__btn" type="button" aria-label="Попередній день">&larr;</button>
             <button class="arrows__btn arrows__btn--next" type="button" aria-label="Наступний день">&rarr;</button>
         </div>
 
-        <!-- прогноз на тиждень із тінню -->
         <ul class="forecast">
             <li class="forecast__day"><span class="forecast__name">Mon</span><span class="forecast__temp">17°</span></li>
             <li class="forecast__day"><span class="forecast__name">Tue</span><span class="forecast__temp">19°</span></li>

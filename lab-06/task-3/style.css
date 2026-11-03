@@ -1,4 +1,4 @@
-/* ================= Форма ================= */
+
 .form {
     width: 600px;
     margin: 40px auto;
@@ -12,9 +12,9 @@
     color: white;
 }
 
-/* ============ Заголовок та вступний текст ============ */
+
 .form-title {
-    position: relative;               /* щоб лінії :before/:after позиціонувались відносно заголовка */
+    position: relative;               
     margin: 0 0 20px;
     text-align: center;
     font-size: 28px;
@@ -29,7 +29,7 @@
     color: #e8e6f2;
 }
 
-/* ---- псевдоелементи заголовка та вступу ---- */
+
 .form-title:first-letter {
     font-size: 48px;
     color: #ffd166;
@@ -40,7 +40,7 @@
     content: '';
     position: absolute;
     top: 50%;
-    margin-top: -1.5px;               /* половина висоти лінії -> центр по вертикалі */
+    margin-top: -1.5px;               
     width: 60px;
     height: 3px;
     background-color: #ffd166;
@@ -55,7 +55,7 @@
     right: 20px;
 }
 
-/* комбінація псевдокласу та псевдоелемента */
+
 .form-title:hover:before,
 .form-title:hover:after {
     width: 90px;
@@ -67,7 +67,7 @@
     font-weight: 700;
 }
 
-/* ============ Поля у два стовпці (float + clearfix) ============ */
+
 .form-fields:after {
     display: block;
     content: '';
@@ -80,7 +80,7 @@
     margin-bottom: 15px;
 }
 
-/* псевдокласи положення в коді */
+
 .form-fields .form-group:nth-child(odd) {
     margin-right: 4%;
 }
@@ -93,7 +93,7 @@
     margin-bottom: 15px;
 }
 
-/* ============ Підписи ============ */
+
 .form-label {
     display: block;
     margin-bottom: 8px;
@@ -106,7 +106,7 @@
     color: #ff6b6b;
 }
 
-/* ============ Однорядкові поля ============ */
+
 .form-input {
     display: block;
     width: 100%;
@@ -114,7 +114,7 @@
     padding: 0 10px;
     box-sizing: border-box;
     border: none;
-    border-bottom: 4px solid transparent;   /* колір змінюється при :hover / :focus */
+    border-bottom: 4px solid transparent;   
     border-radius: 8px;
     background-color: #f1ecff;
     color: #222;
@@ -133,7 +133,7 @@
     background-color: #ffffff;
 }
 
-/* поле пароля — окремі кольори (стоїть ПІСЛЯ загальних правил, тому перемагає) */
+
 .form-input--password:hover {
     border-bottom-color: #ff9f1c;
 }
@@ -143,7 +143,7 @@
     background-color: #ffffff;
 }
 
-/* ============ Багаторядкове поле ============ */
+
 .form-textarea {
     display: block;
     width: 100%;
@@ -168,7 +168,7 @@
     box-shadow: 0 0 10px 5px rgba(6, 214, 160, 0.6);
 }
 
-/* ============ Список вимог до пароля ============ */
+
 .form-hints {
     margin: 20px 0;
     padding: 0;
@@ -180,7 +180,7 @@
     margin-bottom: 6px;
 }
 
-/* маркер без зображень — псевдоелемент :before */
+
 .form-hints li:before {
     content: '';
     display: inline-block;
@@ -212,7 +212,7 @@
     background-color: #06d6a0;
 }
 
-/* ============ Чекбокс та посилання ============ */
+
 .form-rules {
     margin: 0 0 20px;
     font-size: 18px;
@@ -223,7 +223,7 @@
     color: white;
 }
 
-/* LVHA-порядок: :link -> :visited -> :hover -> :active */
+
 .rules-link:link {
     color: #ffd166;
 }
@@ -241,13 +241,13 @@
     color: #ef476f;
 }
 
-/* ============ Кнопки ============ */
+
 .form-buttons {
     text-align: right;
 }
 
 .btn {
-    width: 220px;                     /* див. примітку: на макеті ~220px, у тексті методички 150px */
+    width: 220px;                     
     height: 44px;
     box-sizing: border-box;
     background-color: transparent;
@@ -292,7 +292,7 @@
     outline: 3px dashed #ffd166;
 }
 
-/* :active (стоїть останнім, щоб перебивати :hover) */
+
 .btn-submit:active {
     border: 3px solid #ffd166;
     background-color: #04785a;
@@ -309,7 +309,7 @@
     top: 2px;
 }
 
-/* псевдокласс :active + псевдоелемент :after — піктограма при натисканні */
+
 .btn-submit:active:after {
     content: ' ✔';
 }
