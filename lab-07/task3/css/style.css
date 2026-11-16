@@ -1,0 +1,274 @@
+/* ==========================================================================
+   CSS Variables (:root)
+   ========================================================================== */
+:root {
+  --color-bg-page: #FFFFFF;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #4A4A4A;
+  --color-text-secondary: #6E6E6E;
+  --color-text-muted: #8C8C8C;
+  --color-border: #DCDCDC;
+
+  --font-main: 'Roboto', sans-serif;
+
+  --container-max-width: 496px;
+  --container-padding-x: 12px;
+  --container-padding-y: 20px;
+  --row-padding-y: 12px;
+  --row-padding-x: 12px;
+}
+
+/* ==========================================================================
+   Base Styles (Mobile First: 320px+)
+   ========================================================================== */
+body {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+}
+
+.weather-app {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding-y) var(--container-padding-x);
+  background-color: var(--color-bg-card);
+}
+
+/* ==========================================================================
+   Current Weather Header (Flexbox)
+   ========================================================================== */
+.weather-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+  margin-bottom: 12px;
+}
+
+.city-title {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.weather-date,
+.weather-condition {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+}
+
+.current-weather {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 32px;
+  margin-top: 8px;
+}
+
+.current-temp-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.current-temp {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.temp-value {
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: -1px;
+}
+
+.temp-unit {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.detail-item {
+  color: var(--color-text-primary);
+}
+
+.detail-label {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Multi-Day Forecast List (Flexbox)
+   ========================================================================== */
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.forecast-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: var(--row-padding-y) 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.forecast-day {
+  flex: 0 0 105px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.forecast-icon-wrap {
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-icon {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.forecast-temps {
+  flex: 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.temp-high {
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.temp-low {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.forecast-pollen {
+  flex: 0 0 82px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.pollen-label {
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   Tablet & Desktop Media Queries (1:1 Reference Proportions)
+   ========================================================================== */
+@media (min-width: 480px) {
+  :root {
+    --container-padding-x: 16px;
+    --container-padding-y: 28px;
+    --row-padding-y: 13px;
+    --row-padding-x: 12px;
+  }
+
+  .weather-header {
+    padding: 0 14px;
+    margin-bottom: 14px;
+  }
+
+  .city-title {
+    font-size: 38px;
+    margin-bottom: 4px;
+  }
+
+  .weather-date,
+  .weather-condition {
+    font-size: 15px;
+  }
+
+  .current-weather {
+    gap: 16px 68px;
+    margin-top: 8px;
+  }
+
+  .current-temp-group {
+    gap: 12px;
+  }
+
+  .current-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .temp-value {
+    font-size: 46px;
+  }
+
+  .temp-unit {
+    font-size: 14px;
+  }
+
+  .weather-details {
+    font-size: 14px;
+  }
+
+  .forecast-row {
+    padding: var(--row-padding-y) var(--row-padding-x);
+  }
+
+  .forecast-day {
+    flex: 0 0 130px;
+    font-size: 15px;
+  }
+
+  .forecast-icon-wrap {
+    flex: 0 0 54px;
+  }
+
+  .forecast-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .forecast-temps {
+    flex: 0 0 56px;
+    font-size: 15px;
+  }
+
+  .forecast-pollen {
+    flex: 0 0 108px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New York, NY — Weather Forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="weather-app">
+    <header class="weather-header">
+      <h1 class="city-title">New York, NY</h1>
+      <p class="weather-date">Tuesday, April 15th</p>
+      <p class="weather-condition">Overcast</p>
+
+      <div class="current-weather">
+        <div class="current-temp-group">
+          <img
+            src="icons/iconfinder_weather04.png"
+            alt="Overcast"
+            width="74"
+            height="74"
+            class="current-icon"
+          >
+          <div class="current-temp">
+            <span class="temp-value">58</span>
+            <span class="temp-unit">&deg;F</span>
+          </div>
+        </div>
+
+        <ul class="weather-details">
+          <li class="detail-item"><span class="detail-label">Precipitation:</span> 100%</li>
+          <li class="detail-item"><span class="detail-label">Humidity:</span> 97%</li>
+          <li class="detail-item"><span class="detail-label">Wind:</span> 4 mph SW</li>
+          <li class="detail-item"><span class="detail-label">Pollen Count:</span> 36</li>
+        </ul>
+      </div>
+    </header>
+
+    <section aria-label="7-day weather forecast">
+      <ul class="forecast-list">
+        <li class="forecast-row">
+          <span class="forecast-day">Today</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather07.png" alt="Thunderstorm and rain" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">68&deg;</span>
+            <span class="temp-low">36&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Wednesday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather01.png" alt="Sunny" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">50&deg;</span>
+            <span class="temp-low">39&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Thursday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather01.png" alt="Sunny" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">55&deg;</span>
+            <span class="temp-low">39&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Friday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather02.png" alt="Partly cloudy" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">54&deg;</span>
+            <span class="temp-low">43&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Saturday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather05.png" alt="Light rain" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">64&deg;</span>
+            <span class="temp-low">46&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Sunday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather05.png" alt="Light rain" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">64&deg;</span>
+            <span class="temp-low">50&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+
+        <li class="forecast-row">
+          <span class="forecast-day">Monday</span>
+          <div class="forecast-icon-wrap">
+            <img src="icons/iconfinder_weather02.png" alt="Partly cloudy" width="50" height="50" class="forecast-icon">
+          </div>
+          <div class="forecast-temps">
+            <span class="temp-high">61&deg;</span>
+            <span class="temp-low">50&deg;</span>
+          </div>
+          <span class="forecast-pollen"><span class="pollen-label">Pollen</span> 36</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
