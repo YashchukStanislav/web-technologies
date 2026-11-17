@@ -1,0 +1,105 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --layout-gap: 0.75rem;
+  --layout-border: 2px solid #f05442;
+  --layout-radius: 4px;
+  --layout-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fdf6f6;
+  color: #1f2937;
+  padding: 1rem;
+}
+
+.site-grid__item {
+  background-color: #ffffff;
+  border: var(--layout-border);
+  border-radius: var(--layout-radius);
+  box-shadow: var(--layout-shadow);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   1. MOBILE FIRST (< 576px) — 12-колонкова сітка, усі блоки 1 / span 12
+   ========================================================= */
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto 1fr auto auto auto;
+  gap: var(--layout-gap);
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - 2rem);
+  margin-inline: auto;
+}
+
+.site-header  { grid-column: 1 / span 12; grid-row: 1; }
+.site-nav     { grid-column: 1 / span 12; grid-row: 2; }
+.site-main    { grid-column: 1 / span 12; grid-row: 3; }
+.site-sidebar { grid-column: 1 / span 12; grid-row: 4; }
+.site-ads     { grid-column: 1 / span 12; grid-row: 5; }
+.site-footer  { grid-column: 1 / span 12; grid-row: 6; }
+
+/* =========================================================
+   2. TABLET (>= 576px) — 12 колонок (3 + 9) + 4 рядки
+   ========================================================= */
+@media (min-width: 576px) {
+  :root {
+    --layout-gap: 0.9rem;
+  }
+
+  .site-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .site-header  { grid-column: 1 / span 12; grid-row: 1; }
+  .site-nav     { grid-column: 1 / span 12; grid-row: 2; }
+  .site-sidebar { grid-column: 1 / span 3;  grid-row: 3; }
+  .site-main    { grid-column: 4 / span 9;  grid-row: 3; }
+  .site-ads     { grid-column: 1 / span 3;  grid-row: 4; }
+  .site-footer  { grid-column: 4 / span 9;  grid-row: 4; }
+}
+
+/* =========================================================
+   3. DESKTOP (>= 992px) — 12 колонок (3 + 6 + 3) + 4 рядки
+   ========================================================= */
+@media (min-width: 992px) {
+  :root {
+    --layout-gap: 1rem;
+  }
+
+  .site-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .site-header  { grid-column: 1 / span 12;  grid-row: 1; }
+  .site-sidebar { grid-column: 1 / span 3;   grid-row: 2 / 4; }
+  .site-nav     { grid-column: 4 / span 6;   grid-row: 2; }
+  .site-main    { grid-column: 4 / span 6;   grid-row: 3; }
+  .site-ads     { grid-column: 10 / span 3;  grid-row: 2 / 4; }
+  .site-footer  { grid-column: 1 / span 12;  grid-row: 4; }
+}

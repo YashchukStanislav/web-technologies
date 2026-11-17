@@ -1,0 +1,103 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --gallery-cols: 5;
+  --gallery-gap: 0.9rem;
+  --gallery-row-sm: 185px;
+  --gallery-row-hero: 350px;
+  --color-tf2-dark: #241e1b;
+  --shadow-photo: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.5rem 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-cols), 1fr);
+  grid-template-rows: var(--gallery-row-sm) var(--gallery-row-hero) var(--gallery-row-sm);
+  gap: var(--gallery-gap);
+}
+
+.gallery__item {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background-color: var(--color-tf2-dark);
+  box-shadow: var(--shadow-photo);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.gallery__item--top img {
+  object-position: center 20%;
+}
+
+/* Центральна панорамна світлина займає всі 5 колонок */
+.gallery__item--featured {
+  grid-column: 1 / -1;
+}
+
+/* Планшетна адаптація: до 768px */
+@media (max-width: 768px) {
+  :root {
+    --gallery-cols: 2;
+    --gallery-gap: 0.75rem;
+    --gallery-row-sm: 200px;
+    --gallery-row-hero: 260px;
+  }
+
+  .gallery {
+    grid-template-rows: var(--gallery-row-hero) repeat(5, var(--gallery-row-sm));
+  }
+
+  .gallery__item--featured {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+}
+
+/* Мобільна адаптація: до 576px */
+@media (max-width: 576px) {
+  :root {
+    --gallery-cols: 1;
+    --gallery-gap: 0.75rem;
+    --gallery-row-sm: 220px;
+    --gallery-row-hero: 230px;
+  }
+
+  .gallery {
+    grid-template-rows: var(--gallery-row-hero) repeat(10, var(--gallery-row-sm));
+  }
+}
